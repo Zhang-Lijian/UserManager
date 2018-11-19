@@ -17,7 +17,7 @@
 		</select> <br> 密码<input type="password" name="psd"> <input
 			type="submit" value="提交">
 	</form>
-	<b>测试</b>
+	<b>测试1</b>
 </body>
 <script type="text/javascript">
 	/* 
