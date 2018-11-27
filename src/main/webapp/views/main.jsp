@@ -66,7 +66,7 @@
 				<li>${Users.systemname }</li>
 				<li>${Users.username }</li>
 				<li><a href="${path }/deleteUser?id=${Users.id }"><img
-						class="img_icon" src="${path }/images/delete_icon.png"
+						class="img_icon" src="${path }/images/close.png"
 						alt=""></a></li>
 			</ul>
 		</c:forEach>		

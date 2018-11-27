@@ -52,7 +52,8 @@ public class UserController {
 		return "forward:selectUser";
 	}
 	@RequestMapping("login")
-	public String checkLogin(Admin admin,HttpServletRequest request) {
+	public String checkLogin( Admin admin,HttpServletRequest request) {
+		
 		Admin ad = userServiceImpl.checkLogin(admin);
 		if(ad!=null) {
 			request.getSession().setAttribute("admin", ad);
