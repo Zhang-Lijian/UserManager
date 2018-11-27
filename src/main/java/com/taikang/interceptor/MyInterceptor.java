@@ -14,10 +14,10 @@ public class MyInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("preHandle方法执行了...");
+		//System.out.println("preHandle方法执行了...");
 		boolean flag = false;
 		String servletPath = request.getServletPath();
-		System.out.println(servletPath);
+		//System.out.println(servletPath);
 		for (String s : IGNORE_URI) {
 			if (servletPath.contains(s)) {
 				flag = true;
@@ -45,7 +45,7 @@ public class MyInterceptor implements HandlerInterceptor {
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		System.out.println("afterCompletion方法执行了...");
+		//System.out.println("afterCompletion方法执行了...");
 	}
 
 }

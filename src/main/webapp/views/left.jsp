@@ -19,6 +19,7 @@
         }
         #username{
         font-size: 16px;
+        size-weight:100;
         }
         ul li{
         	
@@ -73,8 +74,9 @@
         ul li:nth-child(2) a:hover i{
             background: url("images/goods_hover.png") no-repeat;
         }
-        ul li:nth-child(3) a:hover i{
+        ul li:nth-child(4) a:hover {
             background: url("images/admin_hover.png") no-repeat;
+            color:red;
         }
 
 

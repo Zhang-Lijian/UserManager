@@ -22,6 +22,10 @@
 			<mvc:mapping path="/*" />
 			<bean class="com.taikang.interceptor.MyInterceptor" />
 		</mvc:interceptor>
+		<mvc:interceptor> 
+			<mvc:mapping path="/addUser" />
+			<bean class="com.taikang.interceptor.AddInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 </beans>

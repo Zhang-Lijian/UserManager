@@ -108,8 +108,30 @@ input[type="text"] {
 	  background: url(../images/adm.png) no-repeat 10px 15px;
 	  border: none;
 	  font-weight: 100;
-	  border-bottom: 1px solid#484856;
+	  border-bottom: 1px solid white;
 	  margin-top: 2em;
+}
+.select {
+		width: 70%;
+		height: 20px;
+	  padding: 1em 2em 1em 3em;
+	  color: #9199aa;
+	  font-size: 18px;
+	  outline: none;
+	  background: url(../images/adm.png) no-repeat 10px 20px;
+	  border: none;
+	  font-weight: 100;
+	  /* border-bottom: 1px solid ; */
+		margin-top: 2em;
+		margin-left: 25px;
+}
+select{
+	border:none;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	background: lightgray;
 }
  input[type="password"]{
 	  width: 70%;
@@ -120,7 +142,7 @@ input[type="text"] {
 	  background: url(../images/key.png) no-repeat 10px 23px;
 	  border: none;
 	  font-weight: 100;
-	  border-bottom: 1px solid#484856;
+	  border-bottom: 1px solid white;
 	  margin-bottom: 3em;
  }
 .key {
