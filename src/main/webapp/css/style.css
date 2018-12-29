@@ -23,7 +23,7 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 60%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -293,6 +293,7 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 .goods_list .title_ul{
 	height: 50px;
 	line-height: 50px;
+	background-color: orange;
 }
 .goods_list ul li{
 	flex: 1;
@@ -307,27 +308,27 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	border-right: none;
 }
 
-
- .goods_list ul li:nth-child(3){
+/*  指定第几个元素占宽度多一些*/
+/*  .goods_list ul li:nth-child(3){
 	flex: 3;
-}
+} */
 
 
 .list_goods_ul{
-	height: 80px;
+	height: 50px;
 	display: flex;
 
 }
 
 .list_goods_ul li{
-	height: 80px;
-	line-height: 80px;
+	height: 50px;
+	line-height: 50px;
 }
 
 
-.list_goods_ul li:nth-child(3){
+/* .list_goods_ul li:nth-child(3){
 	flex: 3;
-}
+} */
 
 
 #account_List .list_goods_ul li:nth-child(3){

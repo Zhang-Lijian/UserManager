@@ -20,12 +20,10 @@ scrolling：是否有滚动条
   -->
 <!-- <frameset rows="70,*" frameborder=0 border="0" framespacing="0">
     <frame src="top.jsp" name="topFrame" scrolling="NO" noresize> -->
-    <frameset cols="250,*" frameborder="0" border="0"  framespacing="10" name="frame">
+    <frameset cols="180,*" frameborder="0" border="0"  framespacing="10" name="frame">
         <frame src="left.jsp" name="leftFrame"  scrolling="NO">
         <frame src="main.jsp" name="mainFrame" >
     </frameset>
 <!--  </frameset>-->
-
-
 
 </html>

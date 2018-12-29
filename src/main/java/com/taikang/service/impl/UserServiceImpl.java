@@ -16,14 +16,13 @@ private UserMapper userMapper;
 
 	@Override
 	public List<Users> selectUser(String dp) {
-		List<Users> u =userMapper.selectUser(dp);
-		return u;
+		return userMapper.selectUser(dp);
 	}
 
 	@Override
-	public void addUser(Users u) {
+	public int addUser(Users u) {
 		// TODO Auto-generated method stub
-		userMapper.addUser(u);
+		return userMapper.addUser(u);
 	}
 
 	@Override
@@ -40,8 +39,37 @@ private UserMapper userMapper;
 
 	@Override
 	public List<Users> selectAll() {
-		List<Users> u =userMapper.selectAll();
-		return u;
+		return userMapper.selectAll();
+		 
+	}
+
+	@Override
+	public void changeStatus(int id) {
+		userMapper.changeStatus(id);
+		
+	}
+
+	@Override
+	public List<Users> query(String oa,String dpt) {
+		return userMapper.query(oa,dpt);
+		
+	}
+
+	@Override
+	public List<Users> queryByoa(String oa) {
+		return userMapper.queryByoa(oa);
+	}
+
+	@Override
+	public void update(Users u) {
+		userMapper.update(u);
+		
+	}
+
+	@Override
+	public Users queryByid(int id) {
+		
+		return userMapper.queryByid(id);
 	}
 
 }

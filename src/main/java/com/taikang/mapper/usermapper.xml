@@ -6,16 +6,31 @@
   <select id="selectUser" resultType="com.taikang.entity.Users">
     select * from users where department =#{dp}
   </select>
+  <select id="query" resultType="com.taikang.entity.Users">
+    select * from users where oa =#{arg0} and department=#{arg1}
+  </select>
+  <select id="queryByoa" resultType="com.taikang.entity.Users">
+    select * from users where oa =#{oa}
+  </select>
   <select id="selectAll" resultType="com.taikang.entity.Users">
     select * from users 
+  </select>
+  <select id="queryByid" resultType="com.taikang.entity.Users">
+    select * from users where id = #{id}
   </select>
   <select id="checkLogin" resultType="com.taikang.entity.Admin">
     select * from admin where department =#{department} and psd=#{psd}
   </select>
-  <insert id="addUser">
-  insert into users values(#{id},#{department},#{systemname},#{username})
+  <insert id="addUser"  useGeneratedKeys="true" keyProperty="id">
+  insert into users values(#{id},#{oa},#{department},#{systemname},#{username},#{applytime},#{applyid},#{endtime},#{endid},#{status})
   </insert>
   <delete id="deleteUser">
   delete from users where id = #{id}
   </delete>
+  <update id="changeStatus">
+  update users set status='false' where id = #{id}
+  </update>
+  <update id="update">
+  update users set status='已注销', endid=#{endid},endtime=#{endtime} where id = #{id}
+  </update>
 </mapper>

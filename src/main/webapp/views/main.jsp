@@ -8,87 +8,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Title</title>
-
-<link rel="stylesheet" href="${path }/css/style.css" type="text/css" />
-<link rel="stylesheet" href="${path }/css/amazeui.min.css" />
-<link rel="stylesheet" href="${path }/css/pageStyle.css">
-
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="${path }/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="${path }/css/amazeui.min.css" />
+	<link rel="stylesheet" href="${path }/css/pageStyle.css">
+	<script src="${path }/js/jquery-1.12.4.js"></script>
+	<style type="text/css">
+	li{
+	font-size: 13px;
+	}
+	</style>
 </head>
 <body style="background: #f3f3f3;">
-
-	<!-- <div class="main_top">
-		<div class="am-cf am-padding am-padding-bottom-0">
-			<div class="am-fl am-cf">
-				<strong class="am-text-primary am-text-lg">商品管理</strong><small></small>
-			</div>
-		</div>
-		<hr>
-		<div class="am-g">
-			<div class="am-u-sm-12 am-u-md-6">
-				<div class="am-btn-toolbar">
-					<div class="am-btn-group am-btn-group-xs">
-						<button id="add" class="am-btn am-btn-default">
-							<span class="am-icon-plus"></span> 新增
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="am-u-sm-12 am-u-md-3"></div>
-			<div class="am-u-sm-12 am-u-md-3">
-				<div class="am-input-group am-input-group-sm">
-					<input type="text" class="am-form-field" id="input_search">
-					<span class="am-input-group-btn">
-						<button class="am-btn am-btn-default" type="button"
-							id="input_search_btn">搜索</button>
-					</span>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div> -->
 
 	<div class="goods_list">
 		<ul class="title_ul">
 			<li>序号</li>
+			<li>OA用户</li>
 			<li>部门</li>
 			<li>系统名称</li>
-			<li>用户名</li>
-			<li>删除</li>
+			<li>系统账号</li>
+			<li>申请时间</li>
+			<li>事务申请号（申请）</li>
+			<li>注销时间</li>
+			<li>事务申请号（注销）</li>
+			<li>账号状态</li>
+			<li>变更状态</li>
 		</ul>
 		<c:forEach items="${list }" var="Users" varStatus="status">
 			<ul class="list_goods_ul">
 				<li>${status.index+1 }</li>
+				<li>${Users.oa }</li>
 				<li>${Users.department }</li>
 				<li>${Users.systemname }</li>
 				<li>${Users.username }</li>
-				<li><a href="${path }/deleteUser?id=${Users.id }"><img
+				<li>${Users.applytime }</li>
+				<li>${Users.applyid }</li>
+				<li>${Users.endtime }</li>
+				<li>${Users.endid }</li>
+				<li>${Users.status }</li>
+				<!-- 修改账户状态为注销 -->
+				<%-- <li><a href="${path }/changeStatus?id=${Users.id }" onclick="if(confirm('确认修改吗？')==false) return false;"><img
+						class="img_icon" src="${path }/images/close.png"
+						alt=""></a></li> --%>
+				<li><a href="${path }/updateUI?id=${Users.id }" onclick="if(confirm('确认修改吗？')==false) return false;"><img
 						class="img_icon" src="${path }/images/close.png"
 						alt=""></a></li>
 			</ul>
 		</c:forEach>		
 	</div>
-
-	<%-- <script src="${path }/admin/js/jquery.min.js"></script>
-	<script type="text/javascript" src="${path }/admin/js/paging.js"></script>
-	<script>
-		//分页
-		$("#page").paging({
-			pageNo : 5,
-			totalPage : 10,
-			totalSize : 300,
-			callback : function(num) {
-				alert(num);
-			}
-		});
-
-		$("#add").click(function() {
-			$(window).attr('location', '${path }/GoodsAddUIServlet');
-		});
-	</script> --%>
-
 </body>
 </html>
