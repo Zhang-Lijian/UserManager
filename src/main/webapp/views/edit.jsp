@@ -35,8 +35,18 @@
 							name="oa" >
 					</div>
 					<div class="item1">
-						<span>系统名称：</span> <input type="text" class="am-form-field"
-							name="systemname">
+						<!-- <span>系统名称：</span> <input type="text" class="am-form-field"
+							name="systemname"> -->
+						<span>系统名称：</span>
+					<select name="systemname">
+						<option value="">---请选择系统---</option>
+						<option  value="CSC">CSC</option>
+						<option  value="BIP">BIP</option>
+						<option  value="UCM">UCM</option>
+						<option  value="BPM">BPM</option>
+						<option  value="BAS">BAS</option>
+						
+					</select>
 					</div>					
 					<div class="item1">
 						<span>系统账户&nbsp;&nbsp;&nbsp;：</span> <input type="text" class="am-form-field"
@@ -56,11 +66,13 @@
 <script>
 	function check(add_form){
 		if(add_form.systemname.value==""){
-			alert("请输入系统名称");add_form.systemname.focus();return;
+			alert("请选择系统名称");add_form.systemname.focus();return;
 		}else if(add_form.username.value==""){
 			alert("请输入系统账户");add_form.username.focus();return;
 		}else if(add_form.oa.value==""){
 			alert("请输入OA用户名");add_form.username.focus();return;
+		}else if(add_form.applyid.value==""||add_form.applyid.value.length!=12||add_form.applyid.value.indexOf("T")!=0){
+			alert("请输入正确的事务申请号");add_form.username.focus();return;
 		}
 		add_form.submit();
 	}
