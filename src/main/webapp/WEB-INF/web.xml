@@ -5,12 +5,8 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>UserManager</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>		
 		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
 	<!-- needed for ContextLoaderListener -->
@@ -18,11 +14,20 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-
+	
+	
 	<!-- Bootstraps the root web application context before servlet initialization -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<!--配置log4j文件位置  -->
+	<context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
+    </context-param>
+    <listener>  
+    	<listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>  
+	</listener> 
 	<!-- 配置字符转码过滤器 -->
 	<filter>
 		<filter-name>CharacterEncoding</filter-name>
@@ -57,29 +62,5 @@
 		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<!-- <context-param>
-  <param-name>log4jConfigLocation</param-name>
-  <param-value>classpath:log4j.properties</param-value>
-</context-param>
-
-<listener>
-  <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-</listener>
- -->
-<listener>
-         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
-    </listener>
-     <filter>
-         <filter-name>log4jServletFilter</filter-name>
-         <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
-     </filter>
-     <filter-mapping>
-         <filter-name>log4jServletFilter</filter-name>
-         <url-pattern>/*</url-pattern>
-         <dispatcher>REQUEST</dispatcher>
-         <dispatcher>FORWARD</dispatcher>
-         <dispatcher>INCLUDE</dispatcher>
-         <dispatcher>ERROR</dispatcher>
-     </filter-mapping>
 
 </web-app>

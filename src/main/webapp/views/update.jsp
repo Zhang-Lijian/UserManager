@@ -36,7 +36,7 @@
 					</div>
 					<div class="item1">
 						<span>OA用户名：</span> <input type="text" class="am-form-field"
-							name="oa" value="${users.oa}" readonly="readonly"}>
+							name="oa" value="${users.oa}" readonly="readonly">
 					</div>
 					<div class="item1">
 						<span>系统名称：</span> <input type="text" class="am-form-field"

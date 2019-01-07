@@ -30,6 +30,9 @@
   <update id="changeStatus">
   update users set status='false' where id = #{id}
   </update>
+  <update id="changepsd">
+  update admin set psd=#{arg1} where department = #{arg0}
+  </update>
   <update id="update">
   update users set status='已注销', endid=#{endid},endtime=#{endtime} where id = #{id}
   </update>

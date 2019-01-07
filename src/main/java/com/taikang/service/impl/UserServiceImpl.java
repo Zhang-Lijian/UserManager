@@ -72,4 +72,10 @@ private UserMapper userMapper;
 		return userMapper.queryByid(id);
 	}
 
+	@Override
+	public void changepsd(String dpt, String newpsd) {
+		
+		userMapper.changepsd(dpt,newpsd);
+	}
+
 }

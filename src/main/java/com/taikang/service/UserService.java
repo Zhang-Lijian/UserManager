@@ -18,4 +18,5 @@ public interface UserService {
 	public List<Users> queryByoa(String oa);
 	public void update(Users u);
 	public Users queryByid(int id);
+	public void changepsd(String dpt, String newpsd);
 }

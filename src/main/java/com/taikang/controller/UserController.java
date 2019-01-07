@@ -115,4 +115,19 @@ public class UserController {
 		session.invalidate();
 		return "forward:/index.html";
 	}
+	@RequestMapping("changepsd")
+	public String changepsd(@RequestParam("newpsd")String newpsd, @RequestParam("currentpsd")String currentpsd,@RequestParam("dpt")String dpt,HttpServletRequest request) {
+		Admin admin = new Admin();
+		admin.setDepartment(dpt);
+		admin.setPsd(currentpsd);
+		Admin result = userServiceImpl.checkLogin(admin);
+		if(result==null) {
+			request.setAttribute("error", "当前密码不正确");
+			
+			}else {
+				userServiceImpl.changepsd(dpt,newpsd);
+				request.setAttribute("error", "密码修改成功");
+			}
+		return "forward:views/changepsd.jsp";
+	}
 }

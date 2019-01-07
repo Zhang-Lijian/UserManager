@@ -19,6 +19,7 @@
 	    <li><a href="query.jsp" target="mainFrame"><i></i>账户查询</a></li>
 	    <li><a href="edit.jsp" target="mainFrame"><i></i>新增账户</a></li>
 	    <li><a href="${path }/logout" ><i></i>退出登录</a></li>
+	    <li><a href="changepsd.jsp" target="mainFrame"><i></i>更改密码</a></li>
 	</ul>
 
 </body>
