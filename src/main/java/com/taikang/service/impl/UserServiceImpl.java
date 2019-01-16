@@ -1,8 +1,6 @@
 package com.taikang.service.impl;
 
 import java.util.List;
-
-import com.taikang.entity.Admin;
 import com.taikang.entity.Users;
 import com.taikang.mapper.UserMapper;
 import com.taikang.service.UserService;
@@ -15,11 +13,6 @@ private UserMapper userMapper;
 }
 
 	@Override
-	public List<Users> selectUser(String dp) {
-		return userMapper.selectUser(dp);
-	}
-
-	@Override
 	public int addUser(Users u) {
 		// TODO Auto-generated method stub
 		return userMapper.addUser(u);
@@ -29,12 +22,6 @@ private UserMapper userMapper;
 	public void deleteUser(int id) {
 		userMapper.deleteUser(id);
 		
-	}
-
-	@Override
-	public Admin checkLogin(Admin admin) {
-		// TODO Auto-generated method stub
-		return userMapper.checkLogin(admin);
 	}
 
 	@Override
@@ -76,6 +63,23 @@ private UserMapper userMapper;
 	public void changepsd(String dpt, String newpsd) {
 		
 		userMapper.changepsd(dpt,newpsd);
+	}
+
+	@Override
+	public List<Users> queryByins(String ins) {
+		return userMapper.queryByins(ins);
+	}
+
+	@Override
+	public List<Users> queryByoa2(String oa, String ins) {
+		
+		return userMapper.queryByoa2(oa,ins);
+	}
+
+	@Override
+	public List<Users> queryBydpt(String dpt) {
+		// TODO Auto-generated method stub
+		return userMapper.queryBydpt(dpt);
 	}
 
 }

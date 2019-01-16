@@ -4,6 +4,7 @@ package com.taikang.entity;
 public class Users {
 	private int id;
 	private String oa;
+	private String institution;
 	private String department;
 	private String systemname;
 	private String username;
@@ -71,6 +72,12 @@ public class Users {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getInstitution() {
+		return institution;
+	}
+	public void setInstitution(String institution) {
+		this.institution = institution;
 	}
 	@Override
 	public String toString() {

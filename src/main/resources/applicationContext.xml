@@ -39,4 +39,8 @@
 		class="com.taikang.service.impl.UserServiceImpl">
 		<property name="userMapper" ref="userMapper"></property>
 	</bean>
+	<bean id="loginService"
+		class="com.taikang.service.impl.LoginServiceImpl">
+		<property name="loginMapper" ref="loginMapper"></property>
+	</bean>
 </beans>

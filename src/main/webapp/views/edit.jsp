@@ -27,16 +27,31 @@
 			<form action="${path }/addUser"
 				style="background: none; width: 700px;" id="add_form" method="post">				
 					<div class="item1">
-						<span>部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：</span> <input type="text" class="am-form-field"
-							name="department" value="${admin.department }" readonly="readonly">
+						<span>机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构：</span> <input type="text" class="am-form-field"
+							name="institution" value="${admin.institution }" readonly="readonly">
 					</div>
+					<div class="item1">
+						<span>部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：</span>
+					<select name="department">					
+						<%-- <option  value="${admin.department }" selected="selected">
+							<c:if test="${admin.department==null}">---请选择部门---</c:if>
+							<c:if test="${admin.department!=null}">${admin.department }</c:if>
+						</option> --%>
+						<option value="">---请选择部门---</option>
+						<option  value="信息技术部" 
+							<c:if test="${admin.department=='信息技术部'}">selected="selected"</c:if>	
+							>信息技术部</option>
+						<option  value="财务部">财务部</option>
+						<option  value="营销部">营销部</option>
+						<option  value="组发部">组发部</option>
+						<option  value="业管部">业管部</option>
+					</select>
+					</div>	
 					<div class="item1">
 						<span>OA用户名：</span> <input type="text" class="am-form-field"
 							name="oa" >
 					</div>
 					<div class="item1">
-						<!-- <span>系统名称：</span> <input type="text" class="am-form-field"
-							name="systemname"> -->
 						<span>系统名称：</span>
 					<select name="systemname">
 						<option value="">---请选择系统---</option>
@@ -44,8 +59,7 @@
 						<option  value="BIP">BIP</option>
 						<option  value="UCM">UCM</option>
 						<option  value="BPM">BPM</option>
-						<option  value="BAS">BAS</option>
-						
+						<option  value="BAS">BAS</option>						
 					</select>
 					</div>					
 					<div class="item1">

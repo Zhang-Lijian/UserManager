@@ -2,14 +2,11 @@ package com.taikang.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.taikang.entity.Admin;
 
 public class MyInterceptor implements HandlerInterceptor {
-	private static final String[] IGNORE_URI = { "/login","html" };
+	private static final String[] IGNORE_URI = { "login","html" };
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

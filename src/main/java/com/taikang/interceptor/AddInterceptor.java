@@ -15,7 +15,8 @@ public class AddInterceptor implements HandlerInterceptor{
 		boolean flag = false;
 		Admin ad = (Admin)request.getSession().getAttribute("admin");
 		String dep = request.getParameter("department");
-		if(ad.getDepartment().equals(dep)) {
+		String ins = request.getParameter("institution");
+		if(dep.equals(ad.getDepartment())||ins.equals(ad.getInstitution())) {
 			flag=true;
 		}
 		return flag;
