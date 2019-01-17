@@ -5,18 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.taikang.entity.Admin;
 import com.taikang.entity.Users;
 import com.taikang.service.UserService;
@@ -25,27 +18,16 @@ import com.taikang.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService userServiceImpl;
-
-	public void setUserServiceImpl(UserService userServiceImpl) {
-		this.userServiceImpl = userServiceImpl;
-	}
-	
-	@RequestMapping("selectUser")
-	public String selectUser(HttpSession session, Map<String, List<Users>> m) {
-		Admin ad = (Admin)session.getAttribute("admin");
-		List<Users> user;
-		if(!ad.getDepartment().equals("管理员")) {
-			user = userServiceImpl.selectUser(ad.getDepartment());
-		}else {
-			user = userServiceImpl.selectAll();
-		}
+	@RequestMapping("queryBydpt")
+	public String selectUser(@RequestParam("department") String dpt, Map<String, List<Users>> m) {		
+		List<Users> user= userServiceImpl.queryBydpt(dpt);
 		m.put("list", user);
 		return "main";
 	}
 	@RequestMapping("addUser")
 	public String addUser(Users u,Map<String, List<Users>> m) {
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		u.setApplytime(sdf.format(date));
 		userServiceImpl.addUser(u);
 		Users u1 = userServiceImpl.queryByid(u.getId());
@@ -56,27 +38,24 @@ public class UserController {
 	}
 	@RequestMapping("deleteUser")
 	public String delete(@RequestParam("id")int id) {
-		userServiceImpl.deleteUser(id);
-		
+		userServiceImpl.deleteUser(id);	
 		return "forward:selectUser";
 	}
 	@RequestMapping("changeStatus")
 	public String changeStatus(@RequestParam("id")int id) {
-		userServiceImpl.changeStatus(id);
-		
+		userServiceImpl.changeStatus(id);	
 		return "main";
 	}
 	@RequestMapping("updateUI")
 	public String update(@RequestParam("id")int id,Map<String, Users> m) {
 		Users u = userServiceImpl.queryByid(id);
-		m.put("users", u);
-		
+		m.put("users", u);	
 		return "update";
 	}
 	@RequestMapping("update")
 	public String update(Users u,Map<String, List<Users>> m) {
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		u.setEndtime(sdf.format(date));
 		userServiceImpl.update(u);
 		Users u1 = userServiceImpl.queryByid(u.getId());
@@ -97,37 +76,19 @@ public class UserController {
 		m.put("list", user);
 		return "main";
 	}
-	@RequestMapping("login")
-	public String checkLogin( Admin admin,HttpServletRequest request) {
-		
-		Admin ad = userServiceImpl.checkLogin(admin);
-		if(ad!=null) {
-			request.getSession().setAttribute("admin", ad);
-			return "redirect:views/admin_index.jsp";
-			//return "admin_index";
-		}else {
-			return "forward:/index.html";
-		}
+	
+	@RequestMapping("queryByoa2")
+	public String queryByoa2(@RequestParam("oa")String oa, @RequestParam("institution")String ins,Map<String, List<Users>> m,HttpSession session) {		
+		List<Users> user = userServiceImpl.queryByoa2(oa,ins);		
+		m.put("list", user);
+		return "main";
 	}
 	
-	@RequestMapping("logout")
-	public String logout(HttpSession session) {
-		session.invalidate();
-		return "forward:/index.html";
+	@RequestMapping("queryByins")
+	public String queryAll(@RequestParam("institution") String ins,Map<String, List<Users>> m) {
+		List<Users> user = userServiceImpl.queryByins(ins);
+		m.put("list", user);
+		return "main";
 	}
-	@RequestMapping("changepsd")
-	public String changepsd(@RequestParam("newpsd")String newpsd, @RequestParam("currentpsd")String currentpsd,@RequestParam("dpt")String dpt,HttpServletRequest request) {
-		Admin admin = new Admin();
-		admin.setDepartment(dpt);
-		admin.setPsd(currentpsd);
-		Admin result = userServiceImpl.checkLogin(admin);
-		if(result==null) {
-			request.setAttribute("error", "当前密码不正确");
-			
-			}else {
-				userServiceImpl.changepsd(dpt,newpsd);
-				request.setAttribute("error", "密码修改成功");
-			}
-		return "forward:views/changepsd.jsp";
-	}
+	
 }

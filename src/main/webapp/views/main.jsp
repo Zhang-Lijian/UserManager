@@ -16,7 +16,7 @@
 	<script src="${path }/js/jquery-1.12.4.js"></script>
 	<style type="text/css">
 	li{
-	font-size: 13px;
+	font-size: 12px;
 	}
 	</style>
 </head>
@@ -25,8 +25,9 @@
 	<div class="goods_list">
 		<ul class="title_ul">
 			<li>序号</li>
-			<li>OA用户</li>
+			<li>机构</li>
 			<li>部门</li>
+			<li>OA用户</li>
 			<li>系统名称</li>
 			<li>系统账号</li>
 			<li>申请时间</li>
@@ -39,8 +40,9 @@
 		<c:forEach items="${list }" var="Users" varStatus="status">
 			<ul class="list_goods_ul">
 				<li>${status.index+1 }</li>
-				<li>${Users.oa }</li>
+				<li>${Users.institution }</li>
 				<li>${Users.department }</li>
+				<li>${Users.oa }</li>
 				<li>${Users.systemname }</li>
 				<li>${Users.username }</li>
 				<li>${Users.applytime }</li>

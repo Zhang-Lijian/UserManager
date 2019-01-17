@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taikang.mapper.LoginMapper">
+  <select id="centralLogin" resultType="com.taikang.entity.Admin">
+    select * from admin where institution =#{institution} and psd=#{psd}
+  </select> 
+  <select id="branchLogin" resultType="com.taikang.entity.Admin">
+    select * from admin where department =#{department} and psd=#{psd}
+  </select> 
+  <update id="changepsd">
+  update admin set psd=#{arg1} where id = #{arg0}
+  </update>
+</mapper>

@@ -3,14 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.taikang.mapper.UserMapper">
-  <select id="selectUser" resultType="com.taikang.entity.Users">
-    select * from users where department =#{dp}
-  </select>
   <select id="query" resultType="com.taikang.entity.Users">
     select * from users where oa =#{arg0} and department=#{arg1}
   </select>
   <select id="queryByoa" resultType="com.taikang.entity.Users">
     select * from users where oa =#{oa}
+  </select>
+  <select id="queryByoa2" resultType="com.taikang.entity.Users">
+    select * from users where oa =#{arg0} and institution=#{arg1}
   </select>
   <select id="selectAll" resultType="com.taikang.entity.Users">
     select * from users 
@@ -18,11 +18,14 @@
   <select id="queryByid" resultType="com.taikang.entity.Users">
     select * from users where id = #{id}
   </select>
-  <select id="checkLogin" resultType="com.taikang.entity.Admin">
-    select * from admin where department =#{department} and psd=#{psd}
+  <select id="queryByins" resultType="com.taikang.entity.Users">
+    select * from users where institution = #{ins}
+  </select>
+  <select id="queryBydpt" resultType="com.taikang.entity.Users">
+    select * from users where department = #{dpt}
   </select>
   <insert id="addUser"  useGeneratedKeys="true" keyProperty="id">
-  insert into users values(#{id},#{oa},#{department},#{systemname},#{username},#{applytime},#{applyid},#{endtime},#{endid},#{status})
+  insert into users values(#{id},#{institution},#{oa},#{department},#{systemname},#{username},#{applytime},#{applyid},#{endtime},#{endid},#{status})
   </insert>
   <delete id="deleteUser">
   delete from users where id = #{id}
