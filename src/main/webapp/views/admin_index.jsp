@@ -6,6 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>浙分核心业务系统账户管理</title>
     <meta http-equiv="Content-Language" content="zh-cn">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
@@ -20,7 +21,7 @@ scrolling：是否有滚动条
   -->
 <!-- <frameset rows="70,*" frameborder=0 border="0" framespacing="0">
     <frame src="top.jsp" name="topFrame" scrolling="NO" noresize> -->
-    <frameset cols="180,*" frameborder="0" border="0"  framespacing="10" name="frame">
+    <frameset cols="200,*" frameborder="0" border="0"  framespacing="10" name="frame">
         <frame src="left.jsp" name="leftFrame"  scrolling="NO">
         <frame src="main.jsp" name="mainFrame" >
     </frameset>

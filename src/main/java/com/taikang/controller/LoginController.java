@@ -23,7 +23,6 @@ public class LoginController {
 		}else {
 			result = loginServiceImpl.branchLogin(admin);
 		}	
-		System.out.println(result);
 		if(result!=null) {
 			request.getSession().setAttribute("admin", result);
 			return "redirect:views/admin_index.jsp";

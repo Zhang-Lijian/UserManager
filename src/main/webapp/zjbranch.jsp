@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 	<link href="css/lgstyle.css" rel='stylesheet' type='text/css' />	
 </head>
 <body>
+
 <!--SIGN UP-->
 	<h1>分公司</h1>
 	<div class="login-form">
@@ -19,11 +21,23 @@
 			<div class="select">
 				<select name="department">
 					<option value="">---请选择部门---</option>
-					<option  value="信息技术部">信息技术部</option>
-					<option  value="财务部">财务部</option>
-					<option  value="办公室">办公室</option>
-					<option  value="客户服务部">客户服务部</option>
+					<option items="${department }">
+					<option  value="营销部">营销部</option>
+					<option  value="组织发展部">组织发展部</option>
+					<option  value="续期收展部">续期收展部</option>
+					<option  value="培训部">培训部</option>
 					<option  value="银保业务部">银保业务部</option>
+					<option  value="银保续期部">银保续期部</option>
+					<option  value="银保培训部">银保培训部</option>
+					<option  value="银保业务支持部">银保业务支持部</option>
+					<option  value="F1部">F1部</option>
+					<option  value="计划财务部">计划财务部</option>
+					<option  value="客户服务部">客户服务部</option>
+					<option  value="人力资源部">人力资源部</option>
+					<option  value="业务管理部">业务管理部</option>
+					<option  value="办公室">办公室</option>
+					<option  value="法律合规与风险管理部">法律合规与风险管理部</option>
+					<option  value="信息技术部">信息技术部</option>
 					<option  value="管理员">管理员</option>
 				</select>
 			</div>

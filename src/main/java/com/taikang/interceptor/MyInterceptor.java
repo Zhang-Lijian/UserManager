@@ -24,8 +24,9 @@ public class MyInterceptor implements HandlerInterceptor {
 		if (flag == false) {
 			Admin admin = (Admin) request.getSession().getAttribute("admin");
 			if (admin == null) {
-				request.setAttribute("error", "您还没有登录，请登录！");
-				request.getRequestDispatcher("login").forward(request, response);
+//				request.setAttribute("error", "您还没有登录，请登录！");
+//				request.getRequestDispatcher("login").forward(request, response);
+				response.sendRedirect("login");
 			} else {
 				flag = true;
 			}

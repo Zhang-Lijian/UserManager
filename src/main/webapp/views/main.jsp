@@ -50,10 +50,6 @@
 				<li>${Users.endtime }</li>
 				<li>${Users.endid }</li>
 				<li>${Users.status }</li>
-				<!-- 修改账户状态为注销 -->
-				<%-- <li><a href="${path }/changeStatus?id=${Users.id }" onclick="if(confirm('确认修改吗？')==false) return false;"><img
-						class="img_icon" src="${path }/images/close.png"
-						alt=""></a></li> --%>
 				<li><a href="${path }/updateUI?id=${Users.id }" onclick="if(confirm('确认修改吗？')==false) return false;"><img
 						class="img_icon" src="${path }/images/close.png"
 						alt=""></a></li>

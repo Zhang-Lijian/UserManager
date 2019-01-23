@@ -11,6 +11,12 @@
     <title>Title</title>
     <link rel="stylesheet" href="${path }/css/common.css">
     <link rel="stylesheet" href="${path }/css/left.css">
+    <style type="text/css">
+	#username{
+	font-size: 14px;
+	font-weight: bold;
+	}
+	</style>
 </head>
 
 <body style="background:#283643;">
@@ -23,9 +29,9 @@
 	    <c:if test="${admin.department==null }">
 	    	<li><a href="query2.jsp" target="mainFrame"><i></i>账户查询</a></li>
 	    </c:if>
-	    <li><a href="edit.jsp" target="mainFrame"><i></i>新增账户</a></li>
-	    <li><a href="${path }/logout" ><i></i>退出登录</a></li>
+	    <li><a href="edit.jsp" target="mainFrame"><i></i>新增账户</a></li>	    
 	    <li><a href="changepsd.jsp" target="mainFrame"><i></i>更改密码</a></li>
+	    <li><a href="${path }/logout" ><i></i>退出登录</a></li>
 	</ul>
 
 </body>

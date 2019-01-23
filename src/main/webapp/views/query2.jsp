@@ -11,30 +11,32 @@
 <title>Insert title here</title>
 <style type="text/css">
 	form{
-	width: 400px;
-	/* height:200px; */
-	/* border:orange 1px solid; */ 
-	margin: 50px auto;
+	margin-left: 100px;
+
 	}
 	.title{
 	margin-top:20px;
-	text-align: center;
 	height: 80px;
+	
 	}
-	form div {
+	.title b{
 	text-align: center;
+	}
+	#form2{
+	margin-top: 50px;
 	}
 </style>
 </head>
 <body>
-	<div class="title"><b>查询</b></div>
-	<form action="${path }/queryByoa2" method="post">		
+	
+	<form action="${path }/queryByoa2" method="post">
+		<div class="title"><b>查询</b></div>		
 		<span>OA用戶名</span><input type="text" name="oa">
 		<input type="hidden" value="${admin.institution }" name="institution">
 		<input type="submit" value="查询">
 	</form>
 	
-	<form action="${path }/queryByins" method="post">
+	<form action="${path }/queryByins" method="post" id="form2">
 		<div><input type="hidden" value="${admin.institution }" name="institution"></div>
 		<div><input type="submit" value="查询全部"></div>
 	</form>

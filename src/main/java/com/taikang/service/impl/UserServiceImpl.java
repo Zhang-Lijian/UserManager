@@ -1,16 +1,23 @@
 package com.taikang.service.impl;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.taikang.entity.Users;
 import com.taikang.mapper.UserMapper;
 import com.taikang.service.UserService;
 
+@Service
 public class UserServiceImpl implements UserService{
-private UserMapper userMapper;
+	@Autowired
+	private UserMapper userMapper;
 
-	public void setUserMapper(UserMapper userMapper) {
-	this.userMapper = userMapper;
-}
+	
+//	 public void setUserMapper(UserMapper userMapper) { this.userMapper =
+//	 userMapper; }
+	 
 
 	@Override
 	public int addUser(Users u) {

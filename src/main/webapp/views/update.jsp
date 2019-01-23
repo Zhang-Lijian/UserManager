@@ -64,17 +64,11 @@
 </body>
 <script>
 	function check(add_form){
-		if(add_form.endid.value==""){
-			alert("请输入注销的事务申请号");add_form.systemname.focus();return;
-		}/* else if(add_form.username.value==""){
-			alert("请输入系统账户");add_form.username.focus();return;
-		}else if(add_form.oa.value==""){
-			alert("请输入OA用户名");add_form.username.focus();return;
-		} */
+		if(add_form.endid.value==""||add_form.applyid.value.length!=12||add_form.applyid.value.indexOf("T")!=0){
+			alert("请输入正确的事务申请号");add_form.username.focus();return;
+		}
+	
 		add_form.submit();
 	}
-	/* $("#reset").click(function() {
-		$(window).attr('location', 'update.jsp');
-	});  */
 </script>
 </html>

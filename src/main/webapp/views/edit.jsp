@@ -33,18 +33,25 @@
 					<div class="item1">
 						<span>部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：</span>
 					<select name="department">					
-						<%-- <option  value="${admin.department }" selected="selected">
-							<c:if test="${admin.department==null}">---请选择部门---</c:if>
-							<c:if test="${admin.department!=null}">${admin.department }</c:if>
-						</option> --%>
 						<option value="">---请选择部门---</option>
+						<option  value="营销部" <c:if test="${admin.department=='营销部'}">selected="selected"</c:if>>营销部</option>
+						<option  value="组织发展部" <c:if test="${admin.department=='组织发展部'}">selected="selected"</c:if>>组织发展部</option>
+						<option  value="续期收展部" <c:if test="${admin.department=='续期收展部'}">selected="selected"</c:if>>续期收展部</option>
+						<option  value="培训部" <c:if test="${admin.department=='培训部'}">selected="selected"</c:if>>培训部</option>
+						<option  value="银保业务部" <c:if test="${admin.department=='银保业务部'}">selected="selected"</c:if>>银保业务部</option>
+						<option  value="银保续期部" <c:if test="${admin.department=='银保续期部'}">selected="selected"</c:if>>银保续期部</option>
+						<option  value="银保培训部" <c:if test="${admin.department=='银保培训部'}">selected="selected"</c:if>>银保培训部</option>
+						<option  value="银保业务支持部" <c:if test="${admin.department=='银保业务支持部'}">selected="selected"</c:if>>银保业务支持部</option>
+						<option  value="F1部" <c:if test="${admin.department=='F1部'}">selected="selected"</c:if>>F1部</option>
+						<option  value="计划财务部" <c:if test="${admin.department=='计划财务部'}">selected="selected"</c:if>>计划财务部</option>
+						<option  value="客户服务部" <c:if test="${admin.department=='客户服务部'}">selected="selected"</c:if>>客户服务部</option>
+						<option  value="人力资源部" <c:if test="${admin.department=='人力资源部'}">selected="selected"</c:if>>人力资源部</option>
+						<option  value="业务管理部" <c:if test="${admin.department=='业务管理部'}">selected="selected"</c:if>>业务管理部</option>
+						<option  value="办公室" <c:if test="${admin.department=='办公室'}">selected="selected"</c:if>>办公室</option>
+						<option  value="法律合规与风险管理部" <c:if test="${admin.department=='法律合规与风险管理部'}">selected="selected"</c:if>>法律合规与风险管理部</option>
 						<option  value="信息技术部" 
 							<c:if test="${admin.department=='信息技术部'}">selected="selected"</c:if>	
 							>信息技术部</option>
-						<option  value="财务部">财务部</option>
-						<option  value="营销部">营销部</option>
-						<option  value="组发部">组发部</option>
-						<option  value="业管部">业管部</option>
 					</select>
 					</div>	
 					<div class="item1">
@@ -55,8 +62,11 @@
 						<span>系统名称：</span>
 					<select name="systemname">
 						<option value="">---请选择系统---</option>
-						<option  value="CSC">CSC</option>
 						<option  value="BIP">BIP</option>
+						<option  value="CSC">CSC</option>
+						<option  value="EBA">EBA</option>
+						<option  value="ELU">ELU</option>
+						<option  value="FE">FE</option>
 						<option  value="UCM">UCM</option>
 						<option  value="BPM">BPM</option>
 						<option  value="BAS">BAS</option>						
