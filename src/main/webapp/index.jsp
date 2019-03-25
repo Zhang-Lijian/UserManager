@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,7 @@
 		<b>浙分核心业务系统账户管理</b>
 		<div class="subdiv"><a href="zjbranch.jsp" >分公司入口</a></div>
 		<div class="subdiv"><a href="centralbranch.jsp">中支入口</a></div>
+		<span style="color:red">${error }</span>
 	</div>
 </body>
 <script type="text/javascript">

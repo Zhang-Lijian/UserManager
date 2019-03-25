@@ -27,7 +27,8 @@ public class LoginController {
 			request.getSession().setAttribute("admin", result);
 			return "redirect:views/admin_index.jsp";
 		}else {
-			return "forward:/index.html";
+			request.setAttribute("error", "密码错误，请重新登陆！");
+			return "forward:/index.jsp";
 		}
 	}
 	
