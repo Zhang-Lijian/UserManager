@@ -54,6 +54,11 @@ public class LoginController {
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "forward:/index.html";
+		return "forward:/index.jsp";
+	}
+	@RequestMapping("toLoginPage")
+	public String toLoginPage() {
+		System.out.println("tologinpage");
+		return "login";
 	}
 }

@@ -2,11 +2,13 @@ package com.taikang.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.web.servlet.HandlerInterceptor;
+
 import com.taikang.entity.Admin;
 
 public class MyInterceptor implements HandlerInterceptor {
-	private static final String[] IGNORE_URI = { "login","html" };
+	private static final String[] IGNORE_URI = { "login","html","index","toLoginPage" };
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -24,9 +26,9 @@ public class MyInterceptor implements HandlerInterceptor {
 		if (flag == false) {
 			Admin admin = (Admin) request.getSession().getAttribute("admin");
 			if (admin == null) {
-//				request.setAttribute("error", "您还没有登录，请登录！");
+//				request.setAttribute("notlogin", "您还没有登录，请登录！");
 //				request.getRequestDispatcher("login").forward(request, response);
-				response.sendRedirect("login");
+				response.sendRedirect("index.jsp");
 			} else {
 				flag = true;
 			}
